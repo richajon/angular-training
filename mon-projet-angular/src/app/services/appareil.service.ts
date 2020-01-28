@@ -1,5 +1,8 @@
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class AppareilService {
   
   appareilSubject = new Subject<any[]>();
@@ -21,6 +24,8 @@ export class AppareilService {
       status: 'Allume'
     }
   ];
+
+  constructor(private httpClient: HttpClient) {};
 
   emitAppareilSubject() {
     this.appareilSubject.next(this.appareils.slice());
@@ -71,5 +76,29 @@ export class AppareilService {
  
     this.appareils.push(appareilObject);
     this.emitAppareilSubject();
+  }
+
+  saveAppareilsToServer() {
+    this.httpClient.put('http://localhost:8080/backend-rest/appareils', this.appareils)
+    .subscribe(
+      () => {
+        console.log("Enregistrement termine. ");
+      },
+      (error) => {
+        console.log("Erreur de sauvegarde: " + error);
+      }
+    )
+  }
+
+  getAppareilsFromServer() {
+    this.httpClient.get<any>('http://localhost:8080/backend-rest/appareils').subscribe(
+      (response) => {
+        this.appareils = response;
+        this.emitAppareilSubject();
+      },
+      (error) => {
+        console.log("Erreur de chargement: " + error);
+      }
+    ) 
   }
 }
