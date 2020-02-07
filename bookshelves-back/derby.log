@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Jan 29 10:30:14 EST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016f-f1ec-a145-00000d54ded0 
+on database directory C:\Temp\bookshelves with class loader ClassRealm[plugin>org.flywaydb:flyway-maven-plugin:6.1.4, parent: sun.misc.Launcher$AppClassLoader@4e25154f] 
+Loaded from file:/c:/Repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_191-b12
+user.dir=C:\App_Dev\workspaces\angular-training-git\bookshelves-back
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

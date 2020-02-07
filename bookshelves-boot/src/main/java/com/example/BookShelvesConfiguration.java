@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories
 @EnableTransactionManagement
 public class BookShelvesConfiguration {
-
+	
 	@Bean
 	public DataSource dataSource() {
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();

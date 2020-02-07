@@ -1,6 +1,4 @@
-package com.example.model;
-
-import java.util.List;
+package com.mycompany.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "bookuser")
-public class User {
+public class User extends AbstractEntity {
 
 	private Long id;
 	private String email;
